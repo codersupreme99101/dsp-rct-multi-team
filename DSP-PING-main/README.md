@@ -56,7 +56,7 @@ Main Repo Link: https://github.com/UCSD-E4E/rct_signal_characterization
 
 NH0 Branch Link: https://github.com/UCSD-E4E/rct_signal_characterization/tree/NH0
 
-New DSP2 Repo, upon which the maina nd NHO is rebuilt: https://github.com/UCSD-E4E/radio_collar_tracker_dsp2
+New DSP2 Repo, upon which the main and NHO is rebuilt: https://github.com/UCSD-E4E/radio_collar_tracker_dsp2
 
 # Ownership:
 
