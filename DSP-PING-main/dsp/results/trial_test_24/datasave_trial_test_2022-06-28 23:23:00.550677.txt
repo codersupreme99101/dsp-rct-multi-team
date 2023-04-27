@@ -1,0 +1,188 @@
+
+
+Logged Data From Experiment: 
+
+
+
+Hyper-parameters considered in this experimental run (CPE correction or CPE non-correction): 
+
+
+Sampling Frequency (Hz): 1000000
+
+Carrier (Central) Frequency (Hz): 172000000
+
+Frequency Offset to Guess (Hz): 5000
+
+Ping Power (dB): -96
+
+Noise Power (dB): -60
+
+Pilot Block Length (P): 64
+
+Pilot Block Length (M): 64
+
+Data Block Length (N): 1024
+
+Number of Frames (B): 8
+
+Number of Frames (B', for Reuse): 9
+
+Transmission Block Length (Q): 6464
+
+Decimation Rate (ψ): 4
+
+Backoff Rate (ignored) (D): 4
+
+
+Summary (Assumed: Bias=0, Transmitted Signal = Received Signal; for all methods): Signal Type: test
+
+
+Type of Analysis with Least MSE: AOM-NR, with a MSE (mean squared error) value of 3.4330506295160626e-17 Hz, which is 4999.768219881481 Hz for an actual offset of 5000 Hz
+
+Type of Analysis with Least STD DEV: BLUE, with a standard deviation value of 0.00027996845255984226 Hz, which is 4999.999720031547 Hz for an actual offset of 5000 Hz
+
+Type of Analysis with Least Cramer Rao Lower Bound: conventional, with a CRLB value of 4.3937208077537305e-17 Hz, which is 4999.984980594771 Hz for an actual offset of 5000 Hz
+
+Type of Analysis with Least CPE Offset: conventional, with a corrected phase error value of 0.04201127465759327 rads, which is 4999.984980594771 Hz for an actual offset of 5000 Hz
+
+Type of Analysis with Least EVM value: AOM-R, with a error vector magnitude value of 5.089570598714506e-05 dB, which is 4999.515011604181 Hz for an actual offset of 5000 Hz
+
+
+MSE (Hz): 
+
+
+AOM-NR: 3.4330506295160626e-17 Hz
+
+MOA-NR: 1.2067992533903182e-15 Hz
+
+AOM-R: 3.673531238365112e-17 Hz
+
+MOA-R: 2.96154041639866e-07 Hz
+
+conventional: 0.00022558253344479254 Hz
+
+MLE: 0.05513922402591499 Hz
+
+BLUE: 7.838233442875265e-08 Hz
+
+
+STD DEV (Hz): 
+
+
+AOM-NR: 0.23178011851905467 Hz
+
+MOA-NR: 0.33019194356438675 Hz
+
+AOM-R: 0.4849883958186183 Hz
+
+MOA-R: 0.16671054510970862 Hz
+
+conventional: 0.015019405229395488 Hz
+
+MLE: 0.23481742700641917 Hz
+
+BLUE: 0.00027996845255984226 Hz
+
+
+Cramer-Rao Lower Bound (CRLB) (Hz): 
+
+
+AOM-NR: 1.0525751429894722e-14 Hz
+
+MOA-NR: 2.1492083219444496e-14 Hz
+
+AOM-R: 4.7009240944246654e-14 Hz
+
+MOA-R: 5.429768321064234e-15 Hz
+
+conventional: 4.3937208077537305e-17 Hz
+
+MLE: 1.0805114524330267e-14 Hz
+
+BLUE: 0.0001493951102863364 Hz
+
+
+Error Vector Magnitude (EVM) (dB): 
+
+
+AOM-NR: 5.089581460424444e-05 dB
+
+MOA-NR: 5.089577238982073e-05 dB
+
+AOM-R: 5.089570598714506e-05 dB
+
+MOA-R: 5.089584251582552e-05 dB
+
+conventional: 5.089590758230056e-05 dB
+
+MLE: 5.089581330138266e-05 dB
+
+BLUE: 5.089591390453687e-05 dB
+
+
+Phase Wrap Offset, Common Phase Error (CPE) (rads): 
+
+
+AOM-NR: -0.1646602263215137 rads
+
+MOA-NR: 1.1099752666330547 rads
+
+AOM-R: -0.5507745452546841 rads
+
+MOA-R: 1.2021043768372925 rads
+
+conventional: 0.04201127465759327 rads
+
+MLE: -0.491898408224543 rads
+
+BLUE: 0.204700621868781 rads
+
+
+Estimated Offsets (CFO, or Carrier/Central Frequency Offsets) (Hz): 
+
+
+AOM-NR: 4999.768219881481 Hz
+
+MOA-NR: 4999.669808056436 Hz
+
+AOM-R: 4999.515011604181 Hz
+
+MOA-R: 4999.83328945489 Hz
+
+conventional: 4999.984980594771 Hz
+
+MLE: 4999.765182572994 Hz
+
+BLUE: 4999.999720031547 Hz
+
+
+Legend: 
+
+
+AOM-NR=Angle of Mean, Non-Reuse
+
+MOA-NR=Mean of Angle, Non-Reuse
+
+AOM-R=Angle of Mean, Reuse
+
+MOA-R=Mean of Angle, Reuse
+
+MLE=Maximum Likelihood Estimate 
+
+BLUE=Best Linear unbiased Estimator 
+
+
+User Choice List of Experiment: 
+
+
+Signal Type for Experiments: test
+
+B, Q Overwrite: True
+
+Hyperparameter Hardsetting: True
+
+Type of Noise applied to Signal: N/A
+
+Signal Normalized with respect to Power: False
+
+U Samples for EVM modeling: Signal Length
