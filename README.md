@@ -13,4 +13,8 @@ RCT DSP official Drone Version 2: https://github.com/UCSD-E4E/radio_collar_track
 
 
 
+Cloud Servers for Large Data Files (non-NAS): 
+
+G-Drive for RAW Binaries: https://drive.google.com/drive/folders/1qROn8E4MPe2SpHtl87pfSybd_mr7yWLf
+
 Team: Arya Keni (Penn State Univ.), Haochen Wang (UCSD)
