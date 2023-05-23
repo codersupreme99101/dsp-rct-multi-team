@@ -45,7 +45,7 @@ The folders **signal_variations** and **ftd** is irrelevant.
 
 Within **dsp**, check **offset_est.py** for the main single transmitter CFO estimation analysis and code, estimated within bounds of 7 methods. Its analysis is in **results** as files. Nothing else in that folder matters. 
 
-In **dsp_spring2023**, the .py file contains methods to convert RAW files from SDR sources to a combined multi signal, as well as extract form binary to complex on conformal occasions. The generated signal for complex and single domains exists in its own analytical .py files as mentioned above. 
+In **dsp_spring2023**, the .py file contains methods to convert RAW files from SDR sources to a combined multi signal, as well as extract form binary to complex on conformal occasions. The generated signal for complex and single domains exists in its own analytical .py files as mentioned above. Additionally, **RAW_DATA_parser.py** in this folder contains crucial methodology on SDR data from drones to be analyzed in a DSP aspect by converting signals received for post-processing. 
 
 The latest adaptations on multi-CFOs are in the **dsp_summer2023** folder, where the **outputs_ftdomain** folder contains hyperparametric analysis on 
 
