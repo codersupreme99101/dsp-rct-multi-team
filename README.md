@@ -61,13 +61,19 @@ For more information on CFO, get started at: https://en.wikipedia.org/wiki/Carri
 
 ~Bitstream conversion and dense data handling with CFO analysis of real data. 
 
+~Signal conversion to FT domain from bitstream, with subsequent proof of concept
+
+~FFT to IFFT to FFT of signals for visualization in frequency and/or time domains. Visualization plots in other complex fields available.
+
+~Data is one which accounts for manipulation of real data to deadlock and deadtime, along with amplitude obfuscation regimes. 
+
 ## Future Directions:
 
 ~Ascertain a clear method for single CFO estimation based on analysis, and test out the details. 
 
 ~Ascertain a clear method for multi CFO estimation based on analysis, and test out the details. 
 
-~Adapt to a more robust RAW data scheme, one which accounts for manipulation of real data to deadlock and deadtime, along with amplitude obfuscation regimes. 
+~Adapt to a more robust RAW data scheme, for appropriate verification of CFO existence (for true markers of CFO to be compared)
 
 ~Optimize the multi CFO for hyperparametric coherence. 
 
