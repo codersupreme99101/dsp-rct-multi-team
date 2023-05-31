@@ -3,6 +3,8 @@ DSP RCT Project from E4E of ECE Department of UCSD, Jacobs School of Engineering
 
 ## Helpful Links and Sources for Relevant Implementations
 
+The Repository which this one ties into: https://github.com/UCSD-E4E/rct-dsp3 (official RCT DSP from E4E)
+
 References of CodeBases: (from RCT, UCSD, ECE):
 
 RCT Postprocessing: https://github.com/UCSD-E4E/radio_collar_tracker_postprocess
