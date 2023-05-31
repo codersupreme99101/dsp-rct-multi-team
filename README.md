@@ -14,12 +14,9 @@ RCT Signal Characterization Theory: https://github.com/UCSD-E4E/rct_signal_chara
 RCT DSP official Drone Version 2: https://github.com/UCSD-E4E/radio_collar_tracker_dsp2
 
 
-
-Cloud Servers for Large Data Files (non-NAS): 
-
-G-Drive for RAW Binaries: https://drive.google.com/drive/folders/1qROn8E4MPe2SpHtl87pfSybd_mr7yWLf
-
 For NAS access: to gain direct RAW directory access: contact Hannah Grehm (UCSD) or Nathan Hui (UCSD) at their _email.ucsd.edu_ institutional emails. 
+
+Use the repository (clone, download, install) for imports via JSON format directly from NAS into .py files for RAW data: https://github.com/UCSD-E4E/smb-unzip
 
 Team: Arya Keni (Penn State Univ.), Haochen Wang (UCSD)
 
