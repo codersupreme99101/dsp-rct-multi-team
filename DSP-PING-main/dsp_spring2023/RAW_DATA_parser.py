@@ -1,10 +1,12 @@
-import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 import struct
 import os
+from pathlib import Path
+from smb_unzip.smb_unzip import smb_unzip #be sure to follow instructions: https://github.com/UCSD-E4E/smb-unzip 
+
 
 def generate_real_signal(dataFilePath,f_s): #rawdata read and transform to signal 
+    
         nSamples = int(os.path.getsize(dataFilePath) / 4)
         signal_raw = np.zeros(nSamples, dtype=np.complex128)
         with open(dataFilePath, 'rb') as dataFile:
@@ -17,11 +19,13 @@ def generate_real_signal(dataFilePath,f_s): #rawdata read and transform to signa
         return t_raw, signal_raw
     
 def read_all_raw_files():
+    dataset_subfolders=["set_1", "set_2", "set_3", "set_4"] #for folders under data, containing RAW only. 
     data_collection=[]
-    for root, dirs, files in os.walk('.'):
-        for file in files:
-            if file.startswith('RAW_DATA_'):
-                path=os.path.join(root,file)
+    for folder in dataset_subfolders:
+        midpath="smb://nas.e4e.ucsd.edu/rct/data/{}/".format(folder)
+        for filename in os.listdir(midpath):
+            path=os.path.join(midpath, filename)
+            if os.path.isfile(path) and "RAW_DATA_" in path:
                 print(f'reading {path}...')
                 t_signal_raw=generate_real_signal(path,1000000)
                 data_collection.append(t_signal_raw)

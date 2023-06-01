@@ -7,6 +7,9 @@ import warnings
 import os
 import datetime
 import time
+from pathlib import Path
+from smb_unzip.smb_unzip import smb_unzip #be sure to follow instructions: https://github.com/UCSD-E4E/smb-unzip 
+
 
 class CFO_DSP:
 
@@ -134,6 +137,7 @@ class CFO_DSP:
 
     def generate_real_signal(self): #rawdata read and transform to signal 
 
+        self.dataFilePath=smb_unzip(network_path='smb://nas.e4e.ucsd.edu/rct/data/set_1/RAW_DATA_000001_000002',output_path=Path('.'),username='aryakeni',password='****') #not actual password
         nSamples = int(os.path.getsize(self.dataFilePath) / 4)
         signal_raw = np.zeros(nSamples, dtype=np.complex128)
         with open(self.dataFilePath, 'rb') as dataFile:
