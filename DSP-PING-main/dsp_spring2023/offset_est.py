@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.integrate import quad
 import matplotlib as mpl
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt; plt.ion()
 import struct
 import warnings
 import os
@@ -10,6 +10,7 @@ import time
 from sklearn import decomposition
 from pathlib import Path
 from smb_unzip.smb_unzip import smb_unzip #be sure to follow instructions: https://github.com/UCSD-E4E/smb-unzip 
+import glob
 
 class CFO_DSP:
 

@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.integrate import quad
 import matplotlib as mpl
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt; plt.ion()
 import struct
 import warnings
 import os
@@ -9,7 +9,7 @@ import datetime
 import time
 from pathlib import Path
 from smb_unzip.smb_unzip import smb_unzip #be sure to follow instructions: https://github.com/UCSD-E4E/smb-unzip 
-
+import glob
 
 class CFO_DSP:
 
@@ -134,6 +134,43 @@ class CFO_DSP:
         print("\nTest Signal Generated. \n")
 
         return t_test, signal_test
+    
+    def generate_raw_visualization(self, f_s, f_c): #raw viz by latest method (june 2023)
+
+        FFT_LEN = 2048
+        fft_bin = 564
+            
+        data_dir =smb_unzip(network_path='smb://nas.e4e.ucsd.edu/rct/data/set_1/',output_path=Path('.'),username='aryakeni',password='****') #not actual password
+        raw_files = sorted(glob.glob(os.path.join(data_dir, 'RAW_DATA_*')))
+
+        samples = []
+
+        for raw_file in raw_files[7:8]:
+            with open(raw_file, 'rb') as data_file:
+                data = data_file.read()
+            for i in range(int(len(data) / 4)):
+                tsample = struct.unpack('hh', data[i * 4:(i+1) * 4])
+                sample = (tsample[0] + tsample[1] * 1j) / 1024
+                samples.append(sample)
+            seq_samples = np.array(samples)
+            arr_samples = np.reshape(seq_samples[0:FFT_LEN*int(len(samples) / FFT_LEN)], (FFT_LEN, int(len(samples) / FFT_LEN)), order='F')
+            f_samp = np.fft.fft(arr_samples, axis=0) / FFT_LEN
+            waterfall = np.power(np.abs(np.fft.fftshift(f_samp, axes=0)), 2)
+
+            waterfall_extents = ((f_c - f_s / 2) / 1e6, (f_c + f_s / 2) / 1e6, len(seq_samples) / f_s, 0)
+
+            freq_isolate = waterfall[fft_bin,:]
+
+            t = np.arange(len(freq_isolate)) / (len(freq_isolate) - 1) * waterfall_extents[2]
+            fig1 = plt.figure()
+            plt.plot(t, freq_isolate)
+            plt.ylabel('Power')
+            plt.xlabel('Time (s)')
+            plt.title('Ping Signal')
+            plt.savefig('ping_signal_{}.png'.format(datetime.datetime.now()))
+            plt.close()
+                
+        return waterfall, freq_isolate
 
     def generate_real_signal(self): #rawdata read and transform to signal 
 
