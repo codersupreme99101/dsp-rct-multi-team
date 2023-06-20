@@ -76,3 +76,4 @@ For more information on CFO, get started at: https://en.wikipedia.org/wiki/Carri
 
 ~Optimize the multi CFO for hyperparametric coherence. 
 
+~Rigorous tesbenching on multiple domains, efficacy measures, transforms, and limitations of extrinsic properties of SDRs and environmental situations, with analytical plots and measurable solutions. 
