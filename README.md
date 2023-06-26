@@ -62,9 +62,11 @@ For more information on CFO, get started at: https://en.wikipedia.org/wiki/Carri
 
 ~Signal conversion to FT domain from bitstream, with subsequent proof of concept
 
-~FFT to IFFT to FFT of signals for visualization in frequency and/or time domains. Visualization plots in other complex fields available.
+~FFT to IFFT to FFT of signals for visualization in frequency and/or time domains. Visualization plots in other complex fields available (STFT, etc.)
 
 ~Data is one which accounts for manipulation of real data to deadlock and deadtime, along with amplitude obfuscation regimes. 
+
+~Handling server zips of large real data readings, along with management of local hierarchies. 
 
 ## Future Directions:
 
@@ -77,3 +79,5 @@ For more information on CFO, get started at: https://en.wikipedia.org/wiki/Carri
 ~Optimize the multi CFO for hyperparametric coherence. 
 
 ~Rigorous tesbenching on multiple domains, efficacy measures, transforms, and limitations of extrinsic properties of SDRs and environmental situations, with analytical plots and measurable solutions. 
+
+~Other signal decomposition imaging techniques, such as JFT, CFT, etc. 
