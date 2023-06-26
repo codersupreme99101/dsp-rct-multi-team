@@ -43,7 +43,7 @@ def generate_visualization(samples): #raw viz by latest method (june 2023)
     ax.set_xlabel('time(s)', labelpad=20)
     ax.set_ylabel('freq(MHz)', labelpad=20)
     ax.set_zlabel('power', labelpad=20)
-    ax.set_zlim(0,0.008)
+    # ax.set_zlim(0,0.008)
     plt.savefig('JFTplot_CombinedRawFiles_{}.jpg'.format(datetime.datetime.now()))
     plt.show()
     return t,freq,waterfall
