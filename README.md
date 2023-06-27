@@ -16,6 +16,19 @@ RCT Signal Characterization Theory: https://github.com/UCSD-E4E/rct_signal_chara
 RCT DSP official Drone Version 2: https://github.com/UCSD-E4E/radio_collar_tracker_dsp2
 
 
+References for BLUE as a concept and implementations:
+
+(1): BLUE-py: https://github.com/jolange/BLUE-py
+
+(2): blue: https://github.com/tomneep/blue
+
+(3): PyBLUE: https://github.com/rdisipio/PyBLUE
+
+(4): BLUEST: https://github.com/croci/bluest
+
+
+
+
 For NAS access: to gain direct RAW directory access: contact Hannah Grehm (UCSD) or Nathan Hui (UCSD) at their _email.ucsd.edu_ institutional emails. 
 
 Use the repository (clone, download, install) for imports via JSON format directly from NAS into .py files for RAW data: https://github.com/UCSD-E4E/smb-unzip
