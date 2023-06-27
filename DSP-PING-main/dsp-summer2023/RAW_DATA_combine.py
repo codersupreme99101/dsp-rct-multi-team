@@ -161,5 +161,6 @@ if __name__ == '__main__':
 
     RAW_signal_collection = read_raw_files(args.path, args.count)
     preprocessed_signal = combine_RAW_signal(RAW_signal_collection)
-    t, freq, power = stft(samples=preprocessed_signal, FFT_LEN=args.fftlen)
-    generate_3d_visualization(t, freq, power)
+    # t, freq, power = stft(samples=preprocessed_signal, FFT_LEN=args.fftlen)
+    # generate_3d_visualization(t, freq, power)
+    waterfall_visualization(samples=preprocessed_signal, FFT_LEN=args.fftlen)
