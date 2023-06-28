@@ -13,6 +13,7 @@ burst_period = 20*10**3
 calm_period = 1*10**6
 mean_amp = np.sqrt(2)
 mean_val_noise = np.sqrt(2*np.pi)
+FFT_LEN=2048
 
 def waterfall_visualization(samples: list, fft_bin = 564):
     
@@ -54,7 +55,7 @@ def stft(samples: list, FFT_LEN: int) -> tuple:  # raw viz by latest method (jun
 
 def generate_3d_visualization(x: np.ndarray, y: np.ndarray, z: np.ndarray) -> None:
     '''
-        function for 3D visualization. Check https://jakevdp.github.io/PythonDataScienceHandbook/04.12-three-dimensional-plotting.html for tutorial and examples
+         function for 3D visualization. Check https://jakevdp.github.io/PythonDataScienceHandbook/04.12-three-dimensional-plotting.html for tutorial and examples
     '''
 
     fig = plt.figure(figsize=(12, 10))
@@ -68,10 +69,41 @@ def generate_3d_visualization(x: np.ndarray, y: np.ndarray, z: np.ndarray) -> No
     surf = ax.plot_surface(x_grid, y_grid, z, cmap=plt.cm.cividis)
 
     fig.colorbar(surf, shrink=0.5, aspect=8)
+    
+    plt.title("JFT as a function of F and T in x and y axis")
 
     plt.savefig('JFTplot_CombinedRawFiles_{}.jpg'.format(
         datetime.datetime.now()))
     plt.show()
+    
+    return None
+    
+def generate_jft_heatmap(x: np.ndarray, y: np.ndarray, z: np.ndarray) -> None:
+    
+    #code to convert jft data to heatmap
+    
+    fig = plt.figure(figsize=(12, 10))
+    ax = plt.axes()
+    
+    x_grid, y_grid = np.meshgrid(x, y)
+    color_map = plt.cm.ScalarMappable(cmap="viridis")
+    
+    plt.pcolormesh(x_grid, y_grid, z, shading="gouraud", cmap="viridis")
+    ax.contour(x_grid, y_grid, z, cmap="viridis")
+    
+    color_map.set_array(z.flatten())
+    cbar=fig.colorbar(color_map) # Add a colorbar to a plot
+    cbar.set_label('JFT power', labelpad=5, fontsize=10)
+    
+    ax.set_xlabel('time(s)', labelpad=20)
+    ax.set_ylabel('freq(Hz)', labelpad=20)
+    
+    plt.title("JFT power as a function of Freq. and Time from x and y axis: a heatmap")
+    
+    plt.savefig('JFTplot_heatmapcombined_{}.jpg'.format(
+        datetime.datetime.now()))
+    
+    return None
 
 
 def combine_RAW_signal(RAW_signal_collection: list) -> list:
