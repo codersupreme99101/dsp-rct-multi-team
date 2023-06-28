@@ -14,6 +14,25 @@ calm_period = 1*10**6
 mean_amp = np.sqrt(2)
 mean_val_noise = np.sqrt(2*np.pi)
 
+def waterfall_visualization(samples: list, fft_bin = 564):
+    
+    seq_samples = np.array(samples)
+    arr_samples = np.reshape(seq_samples[0:FFT_LEN*int(len(samples) / FFT_LEN)], (FFT_LEN, int(len(samples) / FFT_LEN)), order='F')
+    f_samp = np.fft.fft(arr_samples, axis=0) / FFT_LEN
+    waterfall = np.power(np.abs(np.fft.fftshift(f_samp, axes=0)), 2)
+
+    waterfall_extents = ((f_c - f_s / 2) / 1e6, (f_c + f_s / 2) / 1e6, len(seq_samples) / f_s, 0)
+
+    freq_isolate = waterfall[fft_bin,:]
+
+    t = np.arange(len(freq_isolate)) / (len(freq_isolate) - 1) * waterfall_extents[2]
+    fig1 = plt.figure()
+    plt.plot(t, freq_isolate)
+    plt.ylabel('Power')
+    plt.xlabel('Time (s)')
+    plt.title('Ping Signal')
+    plt.savefig('ping_signal.png')
+    plt.close()
 
 def stft(samples: list, FFT_LEN: int) -> tuple:  # raw viz by latest method (june 2023)
     '''
@@ -142,5 +161,6 @@ if __name__ == '__main__':
 
     RAW_signal_collection = read_raw_files(args.path, args.count)
     preprocessed_signal = combine_RAW_signal(RAW_signal_collection)
-    t, freq, power = stft(samples=preprocessed_signal, FFT_LEN=args.fftlen)
-    generate_3d_visualization(t, freq, power)
+    # t, freq, power = stft(samples=preprocessed_signal, FFT_LEN=args.fftlen)
+    # generate_3d_visualization(t, freq, power)
+    waterfall_visualization(samples=preprocessed_signal, FFT_LEN=args.fftlen)
